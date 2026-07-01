@@ -1,5 +1,6 @@
-export * from "./config";
+// export * from "./config";
+// export { disciplines, grades, users } from "./schema";
+
 export { DisciplineRepository } from "./repositories/discipline";
-export { StudentRepository } from "./repositories/student";
-export { TeacherRepository } from "./repositories/teacher";
-export * from "./schema";
+export { GradeRepository } from "./repositories/grade";
+export { UserRepository } from "./repositories/user";

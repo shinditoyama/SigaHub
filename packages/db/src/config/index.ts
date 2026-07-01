@@ -13,7 +13,7 @@ if (!connectionString) {
 }
 
 // Cliente para queries (Query Client)
-const client = postgres(connectionString);
+export const client = postgres(connectionString);
 
 // Instância principal do banco de dados
 export const db = drizzle(client, { schema });

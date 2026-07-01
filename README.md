@@ -1,3 +1,93 @@
+# SigaHub
+
+O SIGA (Sistema Integrado de Gestão Acadêmica) é uma plataforma centralizada que unifica toda a administração escolar e a rotina pedagógica. Ele conecta secretaria, professores e alunos em um único ambiente digital, automatizando processos como matrículas, lançamento de notas e frequências, emissão de documentos e controle de históricos escolares de forma ágil e segura.
+
+## Features
+
+- **Monorepo** managed by Turborepo with pnpm workspaces
+- **Next.js 16** frontend with React 19 and Turbopack
+- **Express.js** backend with TypeScript
+- **Tailwind CSS 4** with shadcn/ui components
+- **TypeScript 6** with strict mode across all packages
+
+## Project Structure
+
+```
+/apps
+   /api          — Express.js backend
+   /web          — Next.js frontend
+
+/packages
+   /db           — Drizzle ORM schemas
+   /types        — Shared types and API client
+   /validators   — Zod validation schemas
+   /ui           — Shadcn component library (Tailwind CSS)
+   /utils        — Shared utility functions
+```
+
+## Getting Started
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/shinditoyama/SigaHub.git
+   cd next-express-turborepo
+   ```
+
+2. **Install dependencies**
+
+   ```bash
+   pnpm install
+   ```
+
+3. **Run the development server**
+
+   ```bash
+   pnpm dev
+   ```
+
+4. **Build for production**
+
+   ```bash
+   pnpm build
+   ```
+
+5. **Lint**
+
+   ```bash
+   pnpm lint
+   ```
+
+## Tech Stack
+
+| Layer    | Technology                                       |
+| -------- | ------------------------------------------------ |
+| Frontend | Next.js 16, React 19, Tailwind CSS 4, shadcn/ui  |
+| Backend  | Express.js, TypeScript                           |
+| Build    | Turborepo, pnpm workspaces                       |
+| Linting  | ESLint 10 (flat config), Prettier, perfectionist |
+| Language | TypeScript 6                                     |
+
+## License
+
+MIT
+
+## Further Reading
+
+For further details on building and setting up this monorepo, check out the original tutorial on [The Halftime Code](https://www.thehalftimecode.com/building-a-full-stack-monorepo-with-turbopack-biome-next-js-express-js-tailwind-css-and-shadcn/).
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Turborepo starter
 
 This Turborepo starter is maintained by the Turborepo core team.

@@ -8,15 +8,20 @@ import {
   validatorCompiler,
   type ZodTypeProvider,
 } from "fastify-type-provider-zod";
-import { routes } from "./routes";
+import { errorHandler } from "./error-handler";
+import { disciplineRoutes } from "./routes/discipline-route";
+import { gradeRoutes } from "./routes/grade-route";
+import { userRoutes } from "./routes/user-route";
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
 
+app.setErrorHandler(errorHandler);
+
 app.register(fastifyCors, {
-  origin: true,
+  origin: "*",
   methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   // credentials: true,
 });
@@ -36,7 +41,9 @@ app.register(fastifySwaggerUi, {
   routePrefix: "/docs",
 });
 
-app.register(routes);
+app.register(disciplineRoutes);
+app.register(gradeRoutes);
+app.register(userRoutes);
 
 app.listen({ port: 3333, host: "0.0.0.0" }).then(() => {
   console.log("🚀 HTTP server running on http://localhost:3333!");
